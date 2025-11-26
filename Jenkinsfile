@@ -28,7 +28,7 @@ pipeline {
                     sh '''
                     echo "Desplegando en EC2..."
 
-                    ssh -o StrictHostKeyChecking=no ubuntu@13.49.44.32 '
+                    ssh -o StrictHostKeyChecking=no ubuntu@56.228.24.161'
                         echo "Actualizando repositorio..."
                         cd /home/ubuntu/Devops || git clone https://github.com/adurancar-oss/Devops.git && cd Devops
                         git pull origin main
