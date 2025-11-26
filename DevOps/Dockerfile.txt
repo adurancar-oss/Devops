@@ -1,0 +1,20 @@
+# Dockerfile para la aplicación Go "Hola soy alumno de la UOC"
+
+# Imagen base con Go
+FROM golang:1.22-alpine
+
+# Carpeta de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copiamos todo el código fuente y los recursos estáticos
+COPY . .
+
+# Compilamos la aplicación Go
+# Esto generará un binario llamado "main"
+RUN go build -o main .
+
+# Exponemos el puerto en el que escucha la aplicación Go
+EXPOSE 8080
+
+# Comando por defecto al arrancar el contenedor
+CMD ["./main"]
